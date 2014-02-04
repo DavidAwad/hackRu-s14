@@ -32,7 +32,7 @@ __  __  ______  ______  __  __    ______  __  __
   
   <body>
 
- <!--  <video id="video_background" preload="auto" autoplay="autoplay" loop="loop" muted="muted" volume="0">
+  <!-- <video id="video_background" preload="auto" autoplay="autoplay" loop="loop" muted="muted" volume="0">
     <source src="img/hackru_site_dark.webm" type="video/webm"/>
     <source src="img/hackru-site.mp4" type="video/mp4"/>
   </video>  -->
@@ -57,13 +57,13 @@ __  __  ______  ______  __  __    ______  __  __
 
     <div id="wrapper">
       <div id="billboard">
-        <div class="">
+        <div id="callout">
         <hgroup>
           <h2>April 12 - 13th</h2>
           <h1>Rutgers Athletic Center</h1>
           <h2>Spring 2014</h2>
         </hgroup>
-         <form id="">
+         <form id="registration-info">
           <input id="name" class="form-input" type="text" name="name" placeholder="Enter your full name!" required>
           <input id="school" class="form-input" type="text" name="school" placeholder="What school do you go to?" required>
           <input id="email" class="form-input" type="email" name="email" placeholder="Enter your email!" required>
@@ -79,7 +79,7 @@ __  __  ______  ______  __  __    ______  __  __
       </div>
 
       <div id="about">
-        <div class="overlay2">
+        <div class="overlay">
           <div class="row">
             <h1>What is Hack<b>RU</b>?</h1>
             <p>HackRU is a 24-hour student <a href="http://en.wikipedia.org/wiki/Hackathon" target="_blank">hackathon</a>. Students (like you) will work alone or in small teams to envision, create, and demo an application. At the start of the hackathon, we will have several companies <a href="http://en.wikipedia.org/wiki/API" target="_blank">present their technologies</a>. You can use these in your applications. Throughout the day, you will be surrounded by mentors from our sponsoring companies, and fellow hackers who will help you along the way. At the end of 24 hours, we will all huddle together with a panel of judges who will award prizes for the best hacks.</p>
@@ -94,7 +94,7 @@ __  __  ______  ______  __  __    ______  __  __
       </div>
 
       <div id="directions">
-        <!-- <div class="overlay2">
+        <!-- <div class="overlay">
           <div class="row">
           <h1>Where to go!</h1>
           <p>For the first time hackRU will be held at the Louis Brown Athletic Center. Let's rock the RAC! <a href="https://www.google.com/maps/preview/place/Rutgers+Athletic+Center/@40.5250109,-74.4401505,17z/data=!4m5!1m2!2m1!1sRutgers+Athletic+Center+83+Rockafeller+Road+Piscataway,+N.J.+08854!3m1!1s0x89c3c799e4acd7af:0xc1b21b4e9a6fa334" target="_blank">Directions</a>.</p>
@@ -129,6 +129,13 @@ __  __  ______  ______  __  __    ______  __  __
         });
       });
 
+      $(window).resize(function() {
+        var wi = $(window).width(); 
+        console.log(wi);
+        $('.videoBG_wrapper').width(wi);
+        $('.videoBG').width(wi);
+      });
+
       // When the window has finished loading create our google map below
       google.maps.event.addDomListener(window, 'load', init);
   
@@ -137,7 +144,7 @@ __  __  ______  ______  __  __    ______  __  __
           // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
           var mapOptions = {
               // How zoomed in you want the map to start at (always required)
-              zoom: 11,
+              zoom: 14,
               scrollwheel: false,
 
               // The latitude and longitude to center the map (always required)

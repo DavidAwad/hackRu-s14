@@ -152,17 +152,16 @@ p {
 	}		
 
 	#twitter-widget-0 {
-		position: absolute;
-		margin-top: -18%;
-		margin-left: 40%;
+		position: static;
+		margin: 2px 30% 0 ;
 	}
 
 	#wrapper {
 		padding-top: 40%;
 	}
 
-	dd {
-		margin-left: 50%;
+	dd a{
+		font-size: 80%;
 	}
 
 	.videoBG {

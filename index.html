@@ -57,7 +57,7 @@ __  __  ______  ______  __  __    ______  __  __
 
     <div id="wrapper">
       <div id="billboard">
-        <div id="callout">
+        <div id="header-text">
         <hgroup>
           <h2>April 12 - 13th</h2>
           <h1>Rutgers Athletic Center</h1>
@@ -127,13 +127,17 @@ __  __  ______  ______  __  __    ______  __  __
           scale:true,
           zIndex:0
         });
+
+        $('#wrapper').css('padding-top', $('.nav-inner').height());
       });
 
       $(window).resize(function() {
         var wi = $(window).width(); 
+        var he = $('.nav-inner').height();
         console.log(wi);
         $('.videoBG_wrapper').width(wi);
         $('.videoBG').width(wi);
+        $('#wrapper').css('padding-top', he);
       });
 
       // When the window has finished loading create our google map below
@@ -175,11 +179,14 @@ __  __  ______  ______  __  __    ______  __  __
       }
 
       $('#nav a').on('click', function(e) { 
-        e.preventDefault(); var target = $(this).attr('href'); 
+        e.preventDefault(); 
+        var target = $(this).attr('href'); 
           if (target == '#') { 
             $('body').animate({scrollTop: 0}); 
           } 
-          else { var targetY = $(target).offset().top; var headerHeight = $('.nav-inner').height(); $('body').animate({scrollTop: targetY - headerHeight}); 
+          else { var targetY = $(target).offset().top; 
+            var headerHeight = $('.nav-inner').height(); 
+            $('body').animate({scrollTop: targetY - headerHeight}); 
           } 
       });
     </script>

@@ -1,0 +1,180 @@
+<!doctype html>
+<!--
+__  __  ______  ______  __  __    ______  __  __    
+/\ \_\ \/\  __ \/\  ___\/\ \/ /   /\  == \/\ \/\ \   
+\ \  __ \ \  __ \ \ \___\ \  _"-. \ \  __<\ \ \_\ \  
+\ \_\ \_\ \_\ \_\ \_____\ \_\ \ \ \ \_\ \_\ \_____\ 
+ \/_/\/_/\/_/\/_/\/_____/\/_/\/_/  \/_/ /_/\/_____/
+-->
+
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>hackRU | Spring 2014</title>
+    <link rel="stylesheet" href="css/foundation.min.css" />
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,600,700,400italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/bigvideo.css" />
+    <link rel="stylesheet" type="text/css" href="css/video-js.min.css" />
+    <link rel="stylesheet" href="css/app.css" />
+    <script src="js/modernizr.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/foundation.min.js">
+    </script>
+    <script src="js/video.js"></script>
+    <script src="js/bigvideo.js"></script>
+    <script src="js/jquery.videoBG.js"></script>
+    <script src="js/imagesloaded.min.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc&sensor=false"></script>
+
+  </head>
+  
+  <body>
+
+ <!--  <video id="video_background" preload="auto" autoplay="autoplay" loop="loop" muted="muted" volume="0">
+    <source src="img/hackru_site_dark.webm" type="video/webm"/>
+    <source src="img/hackru-site.mp4" type="video/mp4"/>
+  </video>  -->
+
+    <div data-magellan-expedition="fixed" id="nav">
+      <div class="nav-inner">
+        <div class="row">
+          <dl class="sub-nav">
+            <dd class="small-12 medium-5 large-5 columns"><a href="#"><img id="logo" src="img/hackru_logo.png"></a></dd>
+            <div id="anchors">
+              <dd class="small-12 medium-1 large-1 columns"><a href="#">Home</a></dd>
+              <dd class="small-12 medium-1 large-1 columns"><a href="#about">About</a></dd>
+              <dd class="small-12 medium-1 large-1 columns"><a href="#directions">  Directions</a></dd>
+              <dd class="small-12 medium-1 large-1 columns"><a href="#sponsors">  Sponsors</a></dd>
+              <dd class="small-12 medium-2 large-2 columns"><a href="https://twitter.com/RUhacking" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @RUhacking</a>
+              <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></dd>
+            </div>
+          </dl>
+          </div>
+        </div>
+      </div>
+
+    <div id="wrapper">
+      <div id="billboard">
+        <div class="">
+        <hgroup>
+          <h2>April 12 - 13th</h2>
+          <h1>Rutgers Athletic Center</h1>
+          <h2>Spring 2014</h2>
+        </hgroup>
+         <form id="">
+          <input id="name" class="form-input" type="text" name="name" placeholder="Enter your full name!" required>
+          <input id="school" class="form-input" type="text" name="school" placeholder="What school do you go to?" required>
+          <input id="email" class="form-input" type="email" name="email" placeholder="Enter your email!" required>
+          <input class="button alert" type="submit" value="Sign Up!">
+        </form>
+        </div>
+      </div>
+
+      <div id="call-to-action" class="web">
+        <div class="row">
+          <h1>Hosted by <a href="http://usacs.rutgers.edu" target="blank"> USACS</a></h1>
+        </div>
+      </div>
+
+      <div id="about">
+        <div class="overlay2">
+          <div class="row">
+            <h1>What is Hack<b>RU</b>?</h1>
+            <p>HackRU is a 24-hour student <a href="http://en.wikipedia.org/wiki/Hackathon" target="_blank">hackathon</a>. Students (like you) will work alone or in small teams to envision, create, and demo an application. At the start of the hackathon, we will have several companies <a href="http://en.wikipedia.org/wiki/API" target="_blank">present their technologies</a>. You can use these in your applications. Throughout the day, you will be surrounded by mentors from our sponsoring companies, and fellow hackers who will help you along the way. At the end of 24 hours, we will all huddle together with a panel of judges who will award prizes for the best hacks.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="web callout">
+        <div class="row">
+          <h1>An incredible <a href="http://en.wikipedia.org/wiki/Hackathon" target="_blank">experience</a> for learning and creation.</h1>
+        </div>
+      </div>
+
+      <div id="directions">
+        <!-- <div class="overlay2">
+          <div class="row">
+          <h1>Where to go!</h1>
+          <p>For the first time hackRU will be held at the Louis Brown Athletic Center. Let's rock the RAC! <a href="https://www.google.com/maps/preview/place/Rutgers+Athletic+Center/@40.5250109,-74.4401505,17z/data=!4m5!1m2!2m1!1sRutgers+Athletic+Center+83+Rockafeller+Road+Piscataway,+N.J.+08854!3m1!1s0x89c3c799e4acd7af:0xc1b21b4e9a6fa334" target="_blank">Directions</a>.</p>
+          </div>
+        </div> -->
+      </div>
+
+      <div id="sponsors">
+          <div class="row">
+          <h1>Previous Sponsors</h1>
+          <img src="img/f2013_sponsors.png">
+          </div>
+      </div>
+
+      <footer class="web">
+        <div class="row">
+          <h1>© hack<b>RU</b> 2014</h1>
+        </div>
+        <p class="credit">Site by <a href="http://kylejson.com" target="_blank"> <b> kylejson</b></a></p>
+      </footer>
+    </div>
+
+    <script>
+      $(function() {
+        $('#billboard').videoBG({
+          mp4:'img/hackru-site.mp4',
+          ogv:'tunnel_animation.ogv',
+          webm:'img/hackru_site_dark.webm',
+          poster:'tunnel_animation.jpg',
+          scale:true,
+          zIndex:0
+        });
+      });
+
+      // When the window has finished loading create our google map below
+      google.maps.event.addDomListener(window, 'load', init);
+  
+      function init() {
+          // Basic options for a simple Google Map
+          // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+          var mapOptions = {
+              // How zoomed in you want the map to start at (always required)
+              zoom: 11,
+              scrollwheel: false,
+
+              // The latitude and longitude to center the map (always required)
+              center: new google.maps.LatLng(40.5250109,-74.4401505), // New York
+
+              // How you would like to style the map. 
+              // This is where you would paste any style found on Snazzy Maps.
+              styles:  [{"stylers":[{"hue":"#dd0d0d"}]},{"featureType":"road","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"geometry","stylers":[{"lightness":100},{"visibility":"simplified"}]}]
+
+            };
+
+          // Get the HTML DOM element that will contain your map 
+          // We are using a div with id="map" seen below in the <body>
+          var mapElement = document.getElementById('directions');
+
+          // Create the Google Map using out element and options defined above
+          var map = new google.maps.Map(mapElement, mapOptions);
+          var myLatlng = new google.maps.LatLng(40.5250109,-74.4401505);
+          var marker = new google.maps.Marker({
+            position: myLatlng,
+            map: map,
+            title: 'HackRU at the RAC!'
+          });
+
+          google.maps.event.addListener(marker, 'click', function() {
+            window.open("https://www.google.com/maps/preview/place/Rutgers+Athletic+Center/@40.5250109,-74.4401505,17z/data=!4m5!1m2!2m1!1sRutgers+Athletic+Center+83+Rockafeller+Road+Piscataway,+N.J.+08854!3m1!1s0x89c3c799e4acd7af:0xc1b21b4e9a6fa334","_blank");
+          });
+      }
+
+      $('#nav a').on('click', function(e) { 
+        e.preventDefault(); var target = $(this).attr('href'); 
+          if (target == '#') { 
+            $('body').animate({scrollTop: 0}); 
+          } 
+          else { var targetY = $(target).offset().top; var headerHeight = $('.nav-inner').height(); $('body').animate({scrollTop: targetY - headerHeight}); 
+          } 
+      });
+    </script>
+  </body>
+</html>

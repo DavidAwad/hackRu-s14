@@ -172,7 +172,7 @@ __  __  ______  ______  __  __    ______  __  __
           $.ajax({
             type: "post",
             url: "post.php",
-            data: {name: $('input#name').attr('value'), email: $('input#email').attr('email'), school: $('input#school').attr('school')}
+            data: {name: $('input#name').attr('value'), email: $('input#email').attr('value'), school: $('input#school').attr('value')}
           }).done(function () {
             alert('thanks for signing up!');
             $('input.button1').attr('value', 'Sign Up!');

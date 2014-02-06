@@ -7,6 +7,10 @@ a:hover {
 	color:red;
 }
 
+a .active{
+	color: #d41d29;
+}
+
 b {
 	color: #d41d29;
 }

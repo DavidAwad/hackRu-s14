@@ -50,7 +50,6 @@ hgroup {
 input, select, textarea{
 	text-align: center;
 	border: 0;
-	font-size: 3em;
   color: #d41d29;
 }
 
@@ -170,6 +169,22 @@ p {
 
 .anchor{
 	top: ;
+}
+
+.button1 {
+	background: transparent url(../img/button1.png) no-repeat top left;
+	height: 53px;
+	width: 130px;
+	z-index: -1;
+	color: white;
+	font-size: 1em;
+}
+
+.button1:hover {
+	background: transparent url(../img/button2.png) no-repeat top left;
+	height: 53px;
+	width: 130px;
+	z-index: -1;
 }
 
 .button.alert {

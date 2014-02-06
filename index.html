@@ -59,7 +59,7 @@ __  __  ______  ______  __  __    ______  __  __
           <input id="name" class="form-input" type="text" name="name" placeholder="Enter your full name!" required>
           <input id="school" class="form-input" type="text" name="school" placeholder="What school do you go to?" required>
           <input id="email" class="form-input" type="email" name="email" placeholder="Enter your email!" required>
-          <input class="button alert" type="submit" value="Sign Up!">
+          <input class="button1" type="submit" value="Sign Up!">
         </form>
         </div>
       </div>
@@ -163,11 +163,11 @@ __  __  ______  ______  __  __    ______  __  __
         e.preventDefault(); 
         var target = $(this).attr('href'); 
           if (target == '#') { 
-            $('body').animate({scrollTop: 0}); 
+            $('body,html').animate({scrollTop: 0}); 
           } 
           else { var targetY = $(target).offset().top; 
             var headerHeight = $('.nav-inner').height(); 
-            $('body').animate({scrollTop: targetY - headerHeight}); 
+            $('body,html').animate({scrollTop: targetY - headerHeight}); 
           } 
       });
     </script>

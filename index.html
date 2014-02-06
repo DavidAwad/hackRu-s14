@@ -159,6 +159,33 @@ __  __  ______  ______  __  __    ______  __  __
           });
       }
 
+      var state = "waiting";
+
+      $('#registration-info').on('submit', function (e) {
+        e.preventDefault();
+
+        if (state == "waiting") {
+          state = "requesting";
+
+          $('input.button1').attr('value', 'Sending...');
+
+          $.ajax({
+            type: "post",
+            url: "post.php",
+            data: {name: $('input#name').attr('value'), email: $('input#email').attr('email'), school: $('input#school').attr('school')}
+          }).done(function () {
+            alert('thanks for signing up!');
+            $('input.button1').attr('value', 'Sign Up!');
+            state = "waiting";
+          }).error(function (error) {
+            alert('There was an error - please try again later');
+            console.log(error);
+            $('input.button1').attr('value', 'Sign Up!');
+            state = "waiting";
+          });
+        }
+      });
+
       $('#nav a').on('click', function(e) { 
         e.preventDefault(); 
         var target = $(this).attr('href'); 

@@ -11,6 +11,10 @@ b {
 	color: #d41d29;
 }
 
+body {
+	background-color: #292c35;
+}
+
 dd a{
 	font-size: 1.2em;
 	font-family: 'Source Sans Pro', sans-serif;
@@ -96,6 +100,7 @@ p {
 
 #sponsors {
 	padding-top: 3%;
+	background-color: white;
 }
 
 #sponsors h1 {

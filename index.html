@@ -14,7 +14,6 @@ __  __  ______  ______  __  __    ______  __  __
     <title>hackRU | Spring 2014</title>
     <link rel="stylesheet" href="css/foundation.min.css" />
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,600,700,400italic' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="css/bigvideo.css" />
     <link rel="stylesheet" type="text/css" href="css/video-js.min.css" />
     <link rel="stylesheet" href="css/app.css" />
     <script src="js/modernizr.js"></script>
@@ -23,7 +22,6 @@ __  __  ______  ______  __  __    ______  __  __
     <script type="text/javascript" src="js/foundation.min.js">
     </script>
     <script src="js/video.js"></script>
-    <script src="js/bigvideo.js"></script>
     <script src="js/jquery.videoBG.js"></script>
     <script src="js/imagesloaded.min.js"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc&sensor=false"></script>
@@ -31,22 +29,16 @@ __  __  ______  ______  __  __    ______  __  __
   </head>
   
   <body>
-
-  <!-- <video id="video_background" preload="auto" autoplay="autoplay" loop="loop" muted="muted" volume="0">
-    <source src="img/hackru_site_dark.webm" type="video/webm"/>
-    <source src="img/hackru-site.mp4" type="video/mp4"/>
-  </video>  -->
-
-    <div data-magellan-expedition="fixed" id="nav">
+    <div data-magellan-expedition="fixed" id="nav" class="one-edge-shadow">
       <div class="nav-inner">
         <div class="row">
           <dl class="sub-nav">
-            <dd class="small-12 medium-5 large-5 columns"><a href="#"><img id="logo" src="img/hackru_logo.png"></a></dd>
+            <dd class="small-12 medium-3 large-3 columns"><a href="#"><img id="logo" src="img/Hackru_swag_logo.png"></a></dd>
             <div id="anchors">
               <dd class="small-2 medium-1 large-1 columns"><a href="#">Home</a></dd>
               <dd class="small-2 medium-1 large-1 columns"><a href="#about">About</a></dd>
               <dd class="small-2 medium-1 large-1 columns"><a href="#directions">  Directions</a></dd>
-              <dd class="small-2 medium-1 large-1 columns"><a href="#sponsors">  Sponsors</a></dd>
+              <dd class="small-2 medium-4 large-4 columns"><a href="#mentor">Mentor/Sponsor</a></dd>
               <dd class="small-12 medium-2 large-2 columns"><a href="https://twitter.com/RUhacking" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @RUhacking</a>
               <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></dd>
             </div>
@@ -94,12 +86,13 @@ __  __  ______  ______  __  __    ______  __  __
       </div>
 
       <div id="directions">
-        <!-- <div class="overlay">
-          <div class="row">
-          <h1>Where to go!</h1>
-          <p>For the first time hackRU will be held at the Louis Brown Athletic Center. Let's rock the RAC! <a href="https://www.google.com/maps/preview/place/Rutgers+Athletic+Center/@40.5250109,-74.4401505,17z/data=!4m5!1m2!2m1!1sRutgers+Athletic+Center+83+Rockafeller+Road+Piscataway,+N.J.+08854!3m1!1s0x89c3c799e4acd7af:0xc1b21b4e9a6fa334" target="_blank">Directions</a>.</p>
-          </div>
-        </div> -->
+        <!-- Google Map -->
+      </div>
+
+      <div id ="mentor" class="web callout">
+        <div class="row">
+          <h1>If you're interested in mentoring us or sponsoring the event, <a href="mailto:team@hackru.org?Subject=Hello%20HackRu!" target="_top">shoot us an email</a>.</h1>
+        </div>
       </div>
 
       <div id="sponsors">
@@ -121,14 +114,13 @@ __  __  ______  ______  __  __    ______  __  __
       $(function() {
         $('#billboard').videoBG({
           mp4:'img/hackru-site.mp4',
-          ogv:'tunnel_animation.ogv',
+          ogv:'img/hackru_site_dark.ogv',
           webm:'img/hackru_site_dark.webm',
-          poster:'tunnel_animation.jpg',
+          poster:'img/bg4.jpg',
           scale:true,
           zIndex:0
         });
-
-        $('#wrapper').css('padding-top', $('.nav-inner').height());
+        $('#wrapper').css('padding-top', $('.nav-inner').height()-20);
       });
 
       $(window).resize(function() {
@@ -140,31 +132,20 @@ __  __  ______  ______  __  __    ______  __  __
         $('#wrapper').css('padding-top', he);
       });
 
-      // When the window has finished loading create our google map below
       google.maps.event.addDomListener(window, 'load', init);
   
       function init() {
-          // Basic options for a simple Google Map
-          // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
           var mapOptions = {
               // How zoomed in you want the map to start at (always required)
               zoom: 14,
               scrollwheel: false,
-
               // The latitude and longitude to center the map (always required)
-              center: new google.maps.LatLng(40.5250109,-74.4401505), // New York
-
+              center: new google.maps.LatLng(40.5250109,-74.4401505), 
               // How you would like to style the map. 
-              // This is where you would paste any style found on Snazzy Maps.
               styles:  [{"stylers":[{"hue":"#dd0d0d"}]},{"featureType":"road","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"geometry","stylers":[{"lightness":100},{"visibility":"simplified"}]}]
-
             };
 
-          // Get the HTML DOM element that will contain your map 
-          // We are using a div with id="map" seen below in the <body>
           var mapElement = document.getElementById('directions');
-
-          // Create the Google Map using out element and options defined above
           var map = new google.maps.Map(mapElement, mapOptions);
           var myLatlng = new google.maps.LatLng(40.5250109,-74.4401505);
           var marker = new google.maps.Marker({

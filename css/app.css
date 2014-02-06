@@ -261,6 +261,10 @@ p {
 	color: #292c35;
 }
 
+.twitter-follow-button {
+	margin: 0 auto;
+}
+
 .web {
 	background-image: url(../img/header-bg.jpg);
 	background-repeat: no-repeat;

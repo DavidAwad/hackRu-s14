@@ -30,7 +30,7 @@ __  __  ______  ______  __  __    ______  __  __
       <div class="nav-inner">
         <div class="row">
           <dl class="sub-nav">
-            <dd class="small-12 medium-12 large-3 columns"><a href="#"><img id="logo" src="img/Hackru_logo.png"></a></dd>
+            <dd class="small-12 medium-12 large-3 columns"><a href="#"><img id="logo" src="img/hackru_logo.png"></a></dd>
             <div id="anchors">
               <dd class="small-2 medium-2 large-1 columns"><a href="#">Home</a></dd>
               <dd class="small-2 medium-2 large-1 columns"><a href="#about">About</a></dd>
@@ -110,12 +110,22 @@ __  __  ______  ______  __  __    ______  __  __
     </div>
 
     <div id="myModal" class="reveal-modal" data-reveal>
-      <h1>Thanks for signing up!</h1>
+      <h1>Thanks for signing up! We will let you know when we open registration!</h1>
       <a class="close-reveal-modal">&#215;</a>
     </div>
 
     <div id="myModal2" class="reveal-modal" data-reveal>
       <h1>There was an error - please try again later!</h1>
+      <a class="close-reveal-modal">&#215;</a>
+    </div>
+
+    <div id="invalidemail" class="reveal-modal" data-reveal>
+      <h1>The email address you entered appears to be invalid.</h1>
+      <a class="close-reveal-modal">&#215;</a>
+    </div>
+
+    <div id="alreadyregistered" class="reveal-modal" data-reveal>
+      <h1>That email address is already on our list.</h1>
       <a class="close-reveal-modal">&#215;</a>
     </div>
 
@@ -188,8 +198,11 @@ __  __  ______  ______  __  __    ______  __  __
             type: "post",
             url: "post.php",
             data: {name: $('input#name').attr('value'), email: $('input#email').attr('value'), school: $('input#school').attr('value')}
-          }).done(function () {
-            $('#myModal').foundation('reveal', 'open');
+          }).done(function (res) {
+            console.log(res);
+            if (res == "Invalid email") $('#invalidemail').foundation('reveal', 'open');
+            else if (res == "Already registered") $('#alreadyregistered').foundation('reveal', 'open');
+            else $('#myModal').foundation('reveal', 'open');
             $('input.button1').attr('value', 'Sign Up!');
             state = "waiting";
           }).error(function (error) {

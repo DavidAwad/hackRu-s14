@@ -63,9 +63,9 @@ $array = sqlite_fetch_array($res);
 if ($array != NULL) die("Already registered");
 
 if ($array == NULL) {
-
   $stm = "INSERT INTO Signups VALUES ('$name', '$school', '$email');";
   $ok = sqlite_exec($dbhandle, $stm, $error);
   if (!$ok) die("Query exec failed: $error");
-
 }
+
+

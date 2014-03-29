@@ -11,11 +11,12 @@ __  __  ______  ______  __  __    ______  __  __
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>HackRU | Spring 2014</title>
-    <link rel="icon" type="image/png" href="img/favicon_old_logo.png">
+    <link rel="icon" type="image/png" href="img/favicon.png">
     <link rel="stylesheet" href="css/foundation.min.css" />
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,600,700,400italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="css/video-js.min.css" />
     <link rel="stylesheet" href="css/app.css" />
+    <link rel="stylesheet" href="css/jquery.remodal.css" />
     <script src="js/modernizr.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
@@ -23,6 +24,7 @@ __  __  ______  ______  __  __    ______  __  __
     <script src="js/jquery.videoBG.js"></script>
     <script src="js/imagesloaded.min.js"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc&sensor=false"></script>
+    <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.17.min.js"></script>
   </head>
   
   <body>
@@ -30,7 +32,7 @@ __  __  ______  ______  __  __    ______  __  __
       <div class="nav-inner">
         <div class="row">
           <dl class="sub-nav">
-            <dd class="small-12 medium-12 large-3 columns"><a href="#"><img id="logo" src="img/hackru_logo.png"></a></dd>
+            <dd class="small-12 medium-12 large-3 columns"><a href="#"><img id="logo" src="img/logo.png"></a></dd>
             <div id="anchors">
               <dd class="small-2 medium-2 large-1 columns"><a href="#">Home</a></dd>
               <dd class="small-2 medium-2 large-1 columns"><a href="#about">About</a></dd>
@@ -53,12 +55,10 @@ __  __  ______  ______  __  __    ______  __  __
           <h2>April 12 - 13th</h2>
           <h1>Rutgers Athletic Center</h1>
           <h2>Spring 2014</h2>
+          <h2 class="st">Sponsored by <a href="" target="_blank"><img src="img/Datto_Backup_Logo.png"></a></h3>
         </hgroup>
-         <form id="registration-info">
-          <input id="name" class="form-input" type="text" name="name" placeholder="Enter your full name!" required>
-          <input id="school" class="form-input" type="text" name="school" placeholder="What school do you go to?" required>
-          <input id="email" class="form-input" type="email" name="email" placeholder="Enter your email!" required>
-          <input class="button1" type="submit" value="Sign Up!">
+        <form>
+         <a href="register.html"> <input class="button1" value="Register Now"></a>
         </form>
         </div>
       </div>
@@ -71,10 +71,45 @@ __  __  ______  ______  __  __    ______  __  __
 
       <div id="about">
         <div class="overlay">
-          <div class="row">
-            <h1>What is Hack<b>RU</b>?</h1>
-            <p>HackRU is a 24-hour student <a href="http://en.wikipedia.org/wiki/Hackathon" target="_blank">hackathon</a>. Students (like you) will work alone or in small teams to envision, create, and demo an application. At the start of the hackathon, we will have several companies <a href="http://en.wikipedia.org/wiki/API" target="_blank">present their technologies</a>. You can use these in your applications. Throughout the day, you will be surrounded by mentors from our sponsoring companies, and fellow hackers who will help you along the way. At the end of 24 hours, we will all huddle together with a panel of judges who will award prizes for the best hacks.</p>
-          </div>
+        <div class="row">
+        <div class="small-12 columns">
+          <h3>What is HackRU?</h3>
+          <p>HackRU is 24 hours of inspired, creative, and insanity-fueled learning and creation where you work in teams of 1-4 people to take a crazy idea and turn it into a super real piece of software (or hardware, if you’re into that). Basically, it’s really fun. All the cool kids are doing it.</p>
+        </div>
+        <div class="small-12 medium-4 columns faq-box">
+          <h3>I’m a vegetarian. Am I going to starve?</h3>
+          <p>Of course not – the lawn will be open for grazing all weekend. Just kidding. We’ve got you covered with some of the finest vegetarian cuisine this side of the turnpike. And don’t worry, it’s not just salad.</p>
+        </div>  
+
+        <div class="small-12 medium-4 columns faq-box">
+          <h3>Help! I’m a noob!</h3>
+          <p><i>Awesome</i>. We absolutely want you to come hang out! We’ll teach you everything you need to know to make something super cool.</p>
+        </div>  
+
+        <div class="small-12 medium-4 columns faq-box">
+          <h3>Do I have to be Rutgers student?</h3>
+          <p>Not at all! Every single person in the world is welcome to come hack with us (unless you need a visa sponsor). Let’s be friends!</p>
+        </div>  
+      </div>
+
+      <div class="row">
+
+        <div class="small-12 medium-4 columns faq-box">
+          <h3>Well gee, Rutgers is kind of far away. Will there be buses?</h3>
+          <p>If you have over twenty hackers coming from your school, contact buses@hackru.org right away so we can dispatch a hacking convoy in your general direction.</p>
+        </div>  
+
+        <div class="small-12 medium-4 columns faq-box">
+          <h3>I don’t have a team – can I still sign up?</h3>
+          <p>You sure can! We’ll be having friend-making sessions so that you can find yourself some like-minded, inspired people and make something awesome.</p>
+        </div>  
+
+        <div class="small-12 medium-4 columns faq-box">
+          <h3>So do people like, hack into stuff, at HackRU?</h3>
+          <p>We’re not a security convention, sorry. You might want to check out the NSA for that.</p>
+        </div>  
+ 
+      </div>
         </div>
       </div>
 
@@ -96,7 +131,8 @@ __  __  ______  ______  __  __    ______  __  __
 
       <div id="sponsors">
           <div class="row">
-          <h1>Previous Sponsors</h1>
+          <h1>Proudly Sponsored By</h1>
+          <img src="img/Datto_Backup_Logo.png">
           <img src="img/f2013_sponsors.png">
           </div>
       </div>
@@ -226,5 +262,8 @@ __  __  ______  ______  __  __    ______  __  __
           } 
       });
     </script>
+
+    <script src="js/jquery.remodal.js"></script>
+    <script src="js/registration.js"></script>
   </body>
 </html>

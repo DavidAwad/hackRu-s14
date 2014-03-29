@@ -61,6 +61,19 @@ input, select, textarea{
   color: #d41d29;
 }
 
+#name, #school, #email, #github {
+	background: transparent;
+	border: none;
+	border-bottom: 1px solid red;
+	height: 50px;
+	font-size: 24px;
+	box-shadow: none;
+}
+
+#upfile{
+	height: 20px;
+}
+
 p {
 	color: white;
 	font-family: 'Source Sans Pro', sans-serif;
@@ -78,10 +91,27 @@ p {
   background-size: cover;
 }
 
+#about p {
+	font-size: 20px;
+}
+
+#about p:first-child {
+	padding-bottom: 5%;
+}
+
+#about .row {
+	padding:3%;
+}
+
 #billboard {
 	height: 100%;
   width: 100%;
 }
+
+#billboard img {
+	width: 120px;
+} 
+
 
 #header-text {
 	padding: 5%;
@@ -105,6 +135,7 @@ p {
 #sponsors {
 	padding-top: 3%;
 	background-color: white;
+	text-align: center;
 }
 
 #sponsors h1 {
@@ -132,7 +163,7 @@ p {
 
 @media(max-width : 640px) {
 	#about p {
-		font-size: 1.5em;
+		font-size: 1.5rem;
 	}
 
 	#billboard {
@@ -221,6 +252,8 @@ p {
 	z-index: -1;
 	color: white;
 	font-size: 1em;
+	cursor: pointer;	
+	text-align: center;
 }
 
 .button1:hover {
@@ -279,6 +312,19 @@ p {
   background-size: cover;
   min-height: 300px;
   text-align: center;
+}
+h3 {
+	color: #d41d29;
+	font-family: 'Source Sans Pro';
+	font-weight: 600;
+}
+
+input, select, textarea{
+    color: gray;
+}
+
+textarea:focus, input:focus {
+    color: gray;
 }
 
 .web a {

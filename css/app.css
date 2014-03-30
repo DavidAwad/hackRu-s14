@@ -95,7 +95,7 @@ p {
 	font-size: 20px;
 }
 
-#about p:first-child {
+#about p {
 	padding-bottom: 5%;
 }
 
@@ -130,6 +130,12 @@ p {
 	border-top: 4px solid #d41d29;
 	position: fixed;
 	z-index: 10;
+}
+
+#reg img{
+	width: 100%;
+	margin-bottom: 10%;
+	text-align: center;
 }
 
 #sponsors {

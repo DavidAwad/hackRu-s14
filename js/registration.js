@@ -11,6 +11,13 @@ function getData () {
   }, {});
 }
 
+function finish (msg) {
+  superAlert(msg);
+
+  $('#submitbtn').attr('disabled', false);
+  $('#submitbtn').attr('value',  'Register');
+}
+
 function register () {
   Parse.initialize("hekpb4HEDmzg9XTFmKZ3Nnq9JXCO00etDfns9xlV", "h8VJFlFDwWEZN2wGx8dkf2mtTPh0qtblxaLEbTa6");
 
@@ -23,23 +30,6 @@ function register () {
   var data = getData();
 
   for (var i in data) user.set(i, data[i]);
-
-  function __doSignup (resumeFile) {
-    console.log(resumeFile);
-    if (resumeFile) user.set('resume', resumeFile);
-
-    user.save().then(function () {
-      alert("You've been signed up successfully!", "http://hackru.org");
-
-      $('#submitbtn').attr('disabled', false);
-      $('#submitbtn').attr('value',  'Register');
-    }, function (error) {
-      alert(error.message);
-
-      $('#submitbtn').attr('disabled', false);
-      $('#submitbtn').attr('value',  'Register');
-    });
-  }
 
   var filecontrol = $('#upfile')[0];
   var filename = $('#upfile').value;
@@ -54,24 +44,39 @@ function register () {
       var parts = file.name.split('.');
       var ext = parts[parts.length - 1].toUpperCase();
       if (ext !== "PDF") {
-        $('#submitbtn').attr('disabled', false);
-        $('#submitbtn').attr('value', 'Register');
-        return alert("Resume must be .pdf file");
+        return finish("Resume must be a .pdf file");
       }
 
       parseFile = new Parse.File(name, file);
     } else {
-      return alert("Resume is required");
+      return finish("Resume is required");
     }
 
   } catch (e) { 
     /* do nothing if the file shit doesnt work */
-    console.log(e);
-    alert("Resume is required");
+    finish("Resume is required");
   } finally {
   }
 
-  __doSignup(parseFile);
+  user.set('resume', parseFile);
+
+  var q = new Parse.Query(reg);
+  q.equalTo('email', data.email);
+  q.find({
+    success: function (results) {
+      if (results.length === 0) {
+        user.save().then(function () {
+          finish("You've been signed up successfully!");
+        }, finish);
+      }
+
+      else finish("Someone has already registered with that email.");
+    },
+
+    error: function (error) {
+      finish("There was an error signing you up. Please try again later.");
+    }
+  });
 }
 
 $('#regform').on('submit', function (e) {
@@ -85,7 +90,7 @@ window.register = register;
 
 var inst = $.remodal.lookup[$('[data-remodal-id=modal]').data('remodal')];
 
-alert = function (stuff, redirect) {
+function superAlert (stuff, redirect) {
   $('#remodal p').html(stuff);
   inst.open();
 
@@ -96,6 +101,6 @@ alert = function (stuff, redirect) {
     });
   }
   */
-};
+}
 
 }());

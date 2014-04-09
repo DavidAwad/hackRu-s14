@@ -42,7 +42,7 @@ form {
 }
 
 h1 {
-	font-size: 4em;
+	font-size: 3.5em;
 }
 
 h1 , h2 {
@@ -132,10 +132,25 @@ p {
 	z-index: 10;
 }
 
+#reg {
+	border-top: 4px solid #d41d29;
+}
+
 #reg img{
 	width: 100%;
-	margin-bottom: 10%;
+	padding-top: 3%;
+	margin-bottom: 5%;
 	text-align: center;
+}
+
+#regform {
+	margin: 0 auto;
+}
+
+#sched p {
+	color: #292c35;
+	font-size: 20px;
+	text-align: left;
 }
 
 #sponsors {
@@ -171,6 +186,13 @@ p {
 	#about p {
 		font-size: 1.5rem;
 	}
+
+#sched p {
+	color: #292c35;
+	font-size: 20px;
+	text-align: center;
+}
+
 
 	#billboard {
 		background-image: url(../img/bg4.jpg);
@@ -216,6 +238,14 @@ p {
 	  background-size: cover;
 	  min-height: 100%;
 	}
+
+
+#sched p {
+	color: #292c35;
+	font-size: 20px;
+	text-align: center;
+	margin-right: 50px;
+}
 
 	.videoBG {
 		display: none;
@@ -325,11 +355,11 @@ h3 {
 	font-weight: 600;
 }
 
-input, select, textarea{
+#reg input, #reg select, #reg textarea{
     color: gray;
 }
 
-textarea:focus, input:focus {
+#reg textarea:focus,#reg input:focus {
     color: gray;
 }
 
@@ -342,7 +372,7 @@ textarea:focus, input:focus {
 }
 
 .callout h1 {
-	margin-top: 5%;
+	margin-top: 4%;
 }
 
 .callout h1 {

@@ -49,12 +49,12 @@ function register () {
 
       parseFile = new Parse.File(name, file);
     } else {
-      return finish("Resume is required");
+      //return finish("Resume is required");
     }
 
   } catch (e) { 
     /* do nothing if the file shit doesnt work */
-    finish("Resume is required");
+    //finish("Resume is required");
   } finally {
   }
 
